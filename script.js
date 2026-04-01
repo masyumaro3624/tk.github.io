@@ -123,7 +123,7 @@ function setBackground(line) {
       img.src = "img/" + line.background.replace(".png", `_${i}.png`);
     }
 
-    img.loading = "lazy";
+    img.loading = "eager";  // ← これに変更
     img.decoding = "async";
     img.className = "bgPart";
 
