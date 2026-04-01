@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>列車走行位置</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <div id="topHeader">
+    <button class="back-btn" onclick="history.back()">‹</button>
+    <span id="headerLineName">列車走行位置</span>
+    <div style="width:40px"></div>
+  </div>
+
+  <!-- 列車情報パネル -->
+  <div id="trainInfo" class="train-info">
+    <div class="train-info-header" id="trainInfo-header">
+      <span id="infoLine"></span>
+      <button class="close-btn" onclick="closeInfo()">×</button>
+    </div>
+    <div class="train-info-body" id="trainInfoBody"></div>
+  </div>
+
+  <!-- 地図スクロールエリア -->
+  <div id="viewer">
+    <div id="map-wrapper">
+      <div id="map">
+        <img src="background.png" id="bg">
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

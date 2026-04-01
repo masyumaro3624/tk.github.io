@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>列車走行位置</title>
+<link rel="stylesheet" href="preview.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ヘッダー -->
+    <div class="header">
+        <div class="search">🔍</div>
+        関東 エリア ▼
+    </div>
+
+    <!-- コンテンツ -->
+    <div class="content">
+
+        <!-- タブ -->
+        <div class="tabs">
+            <div class="tab active">首都圏</div>
+            <div class="tab">どこトレ</div>
+        </div>
+
+        <!-- 路線一覧 -->
+        <div class="line-list" id="lineList"></div>
+
+    </div>
+
+    <!-- 下ナビ -->
+    <div class="bottom-nav">
+        <div class="nav-item">経路検索</div>
+        <div class="nav-item">運行状況</div>
+        <div class="nav-item">駅情報</div>
+        <div class="nav-item active">列車位置</div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="sabu.js"></script>
+
+</body>
+</html>
