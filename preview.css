@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", "Noto Sans JP", sans-serif;
+    background: #2f4f58;
+}
+
+/* コンテナ */
+.container {
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* ヘッダー */
+.header {
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.search {
+    position: absolute;
+    left: 12px;
+    font-size: 18px;
+}
+
+/* コンテンツ */
+.content {
+    background: #dcdcdc;
+    border-radius: 20px 20px 0 0;
+    padding: 10px;
+    min-height: calc(100vh - 56px);
+}
+
+/* タブ */
+.tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+    padding: 8px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    background: #eaeaea;
+    color: #777;
+}
+
+.tab.active {
+    background: #5aa374;
+    color: white;
+}
+
+/* 路線リスト */
+.line-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* カード */
+.line-card {
+    background: #eeeeee;
+    border-radius: 14px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 押したとき */
+.line-card:active {
+    transform: scale(0.97);
+    background: #e2e2e2;
+}
+
+/* ナンバリング画像 */
+.line-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+/* fallback */
+.line-icon-fallback {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 14px;
+    border: 2.5px solid;
+}
+
+/* テキスト */
+.line-name {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* 矢印 */
+.arrow {
+    margin-left: auto;
+    font-size: 16px;
+    color: #999;
+}
+
+/* 下ナビ */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 420px;
+    height: 56px;
+    background: #2f4f58;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #aaa;
+    font-size: 11px;
+}
+
+.nav-item.active {
+    color: white;
+}
