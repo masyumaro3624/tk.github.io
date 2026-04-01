@@ -5,8 +5,11 @@
 let params = new URLSearchParams(location.search);
 let currentLineId = null;
 
+<<<<<<< HEAD
 const img = document.createElement("img");
 console.log(img.src);
+=======
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
 console.log("選択路線:", currentLineId);
 
 
@@ -17,7 +20,11 @@ const LINES = {
     upX: 1350,
     downX: 1800,
     color: "#68f5ff",
+<<<<<<< HEAD
     background: "background_JT.png",  
+=======
+    background: "background_JT.png",  // ← 追加
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
     stationOffset: -2,
     stationCount: 44,
     stationYStart: 262,
@@ -82,7 +89,10 @@ const LINES = {
     stationCount: 44,
     stationYStart: 262,
     stationYEnd: 26704,
+<<<<<<< HEAD
     bgParts: 10, 
+=======
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
   },
 
   
@@ -103,6 +113,7 @@ const LINES = {
 }
 
 
+<<<<<<< HEAD
 function setBackground(line) {
   const bg = document.getElementById("bg");
   if (!bg) return;
@@ -128,6 +139,35 @@ function setBackground(line) {
     img.className = "bgPart";
 
     bg.appendChild(img);
+=======
+function selectLine(lineId) {
+  console.log("選択:", lineId);
+  currentLineId = lineId;
+
+  const line = LINES[lineId];
+
+  // ヘッダー背景色
+  document.body.style.background = line.color;
+
+  // ===== 背景画像を切り替え =====
+  const bg = document.getElementById("bg");
+  if (bg) {
+    bg.src = line.background || "background.png";  // なければデフォルト
+  }
+  // ==============================
+
+  // レイヤー切り替え
+  for (const id in LINES) {
+    for (const dir of ["up", "down"]) {
+      const el = document.getElementById(`layer_${id}_${dir}`);
+      if (el) el.style.display = "none";
+    }
+  }
+
+  for (const dir of ["up", "down"]) {
+    const el = document.getElementById(`layer_${lineId}_${dir}`);
+    if (el) el.style.display = "block";
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
   }
 }
 
@@ -285,6 +325,7 @@ async function update() {
 window.onload = () => {
   initLayers();
 
+<<<<<<< HEAD
   const params = new URLSearchParams(location.search);
   const lineId = params.get("line") || Object.keys(LINES)[0];
 
@@ -305,6 +346,37 @@ window.onload = () => {
   for (const dir of ["up", "down"]) {
     const el = document.getElementById(`layer_${lineId}_${dir}`);
     if (el) el.style.display = "block";
+=======
+  // ===== スケール動的計算 =====
+  const MAP_W = 1080;
+  const MAP_H = 27000;
+
+  function applyScale() {
+    const scale = window.innerWidth / MAP_W;
+    const map = document.getElementById("map");
+    map.style.transform = `scale(${scale})`;
+
+    const wrapper = document.getElementById("map-wrapper");
+    wrapper.style.width  = window.innerWidth + "px";
+    wrapper.style.height = (MAP_H * scale) + "px";
+  }
+
+  applyScale();
+  window.addEventListener("resize", applyScale);
+  // ===========================
+
+  // URLパラメータから路線を取得
+  const params = new URLSearchParams(location.search);
+  const lineId = params.get("line");
+
+  if (lineId && LINES[lineId]) {
+    selectLine(lineId);
+    // ヘッダーに路線名を表示
+    const headerEl = document.getElementById("headerLineName");
+    if (headerEl) headerEl.textContent = LINES[lineId].name;
+  } else {
+    selectLine(Object.keys(LINES)[0]);
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
   }
 
   update();

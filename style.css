@@ -64,6 +64,7 @@ html, body {
 /* bgをmapの中に */
 #bg {
   position: absolute;
+<<<<<<< HEAD
   top: 0;
   left: 0;
   width: 1080px;
@@ -72,6 +73,12 @@ html, body {
 .bgPart {
   display: block;
   width: 100%;
+=======
+  left: 0;
+  top: 0;
+  width: 1080px;
+  height: 27000px;
+>>>>>>> 810b94a2d3631fd2620ff8c48c05cd89d82c4b5f
 }
 
 /* ===== 列車レイヤー ===== */
