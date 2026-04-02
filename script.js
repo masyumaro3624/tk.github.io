@@ -124,7 +124,7 @@ function setBackground(line) {
     }
 
     img.loading = "eager";  // ← これに変更
-    img.decoding = "async";
+    img.decoding = "sync";
     img.className = "bgPart";
 
     bg.appendChild(img);
