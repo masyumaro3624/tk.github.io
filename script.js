@@ -294,6 +294,14 @@ window.onload = () => {
   document.body.style.background = line.color;
   setBackground(line);
 
+  // ↓ ここに追加
+  const map = document.getElementById("map");
+  const wrapper = document.getElementById("map-wrapper");
+  const scale = window.innerWidth / 1080;
+  map.style.transform = `scale(${scale})`;
+  wrapper.style.width = window.innerWidth + "px";
+  wrapper.style.height = (27000 * scale) + "px";
+
   // レイヤー表示
   for (const id in LINES) {
     for (const dir of ["up", "down"]) {
