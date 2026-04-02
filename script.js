@@ -179,6 +179,7 @@ function getTrainY(line, station, type) {
 // =====================
 function drawTrains(trains) {
 
+
   // 全消去
   for (const lineId in LINES) {
     for (const dir of ["up", "down"]) {
@@ -226,6 +227,7 @@ function drawTrains(trains) {
         .appendChild(el);
     });
   });
+  
 }
 
 // =====================
@@ -295,6 +297,13 @@ window.onload = () => {
   setBackground(line);
 
   // ↓ ここに追加
+  const map = document.getElementById("map");
+  const wrapper = document.getElementById("map-wrapper");
+  const scale = window.innerWidth / 1080;
+  console.log("innerWidth:", window.innerWidth, "scale:", scale);  // ← 追加
+  map.style.transform = `scale(${scale})`;
+  
+  map.style.transform = `scale(${scale})`;
   wrapper.style.width = window.innerWidth + "px";
   wrapper.style.height = (27000 * scale) + "px";
 

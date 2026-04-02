@@ -77,7 +77,7 @@ html, body {
 /* ===== 列車レイヤー ===== */
 .trainLayer {
   position: absolute;
-  left: 0;
+  left: -1000px;
   top: 0;
   width: 1080px;
   height: 27000px;
